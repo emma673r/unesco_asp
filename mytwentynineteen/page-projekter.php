@@ -38,12 +38,13 @@ get_header();
 <script>
 
 		const url = "http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/projekt?per_page=100";
-		const catUrl = "http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/categories";
+		const verdensmalUrl = "http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/verdensmal";
+		const uddanelseUrl = "http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/uddanelsesniveau";
 		let filter = "alle";
 		let filterProjekt = "alle";
 		let projekter = [];
-		let categories = [];
-		let parsedFilterProjekt;
+		let verdensmal = [];
+		let uddanelse = [];
 
 
 
@@ -55,18 +56,23 @@ function start() {
 
 async function hentData() {
   const respons = await fetch(url);
-  const catData = await fetch(catUrl);
+  const verdensmalData = await fetch(verdensmalUrl);
+  const uddanelseData = await fetch(uddanelseUrl);
   projekter = await respons.json();
-  categories = await catData.json();
+  verdensmal = await verdensmalData.json();
+  uddanelse = await uddanelseData.json();
   console.log(projekter);
-  console.log(categories);
+  console.log(verdensmal);
   visProjekter();
   opretKnapper();
 }
 
 function opretKnapper() {
-categories.forEach (cat => {
-document.querySelector("#filtrering").innerHTML += `<button class="filter" data-projekt="${cat.name}">${cat.name}</button>`
+verdensmal.forEach (verdensmal => {
+document.querySelector("#filtrering").innerHTML += `<button class="filter" data-projekt="${verdensmal.name}">${verdensmal.name}</button>`
+})
+uddanelse.forEach (udd => {
+document.querySelector("#filtrering").innerHTML += `<button class="filter" data-projekt="${udd.name}">${udd.name}</button>`
 })
 addEventListenersToButtons ();
 }
@@ -85,19 +91,18 @@ function filtrering() {
 
 function visProjekter() {
 	console.log("projekter", projekter);
+
+
 	let temp = document.querySelector("template");
 	let container = document.querySelector("#liste");
-	
-	 parsedFilterProjekt = parseInt(filterProjekt);
-	
-	console.log("filterProjekt",filterProjekt);
-	console.log("parsedFilterProjekt",parsedFilterProjekt);
 	container.innerHTML = "";
 	
 	projekter.forEach((projekt) => {
 		console.log("projekt",projekt)
-		console.log("projekt.categories",projekt.categories)
-		if (filterProjekt == "alle" || projekt.categories.includes(filterProjekt)) {
+		console.log("projekt.verdensmal",projekt.verdensmal)
+		console.log("projekt.uddanelse",projekt.uddanelse)
+		if (filterProjekt == "alle" || projekt.verdensmal.includes(filterProjekt) || projekt.uddanelsesniveau.includes(filterProjekt)) {
+			
 			let klon = temp.cloneNode(true).content;
 
 			klon.querySelector(".navn").innerHTML = projekt.navn;
