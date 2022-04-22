@@ -20,8 +20,10 @@ get_header();
       <article>
         <h3 class="navn"></h3>
         <img class="img" src="" alt="">
-        <p><span class="langbeskrivelse"></span></p>
-        <p>Pris: <span class="pris"></span></p>
+        <p><span class="kortbeskrivelse"></span></p>
+        <p><span class="beskrivelse"></span></p>
+        <a href=""></a>
+        <p><span class="extra"></span></p>
       </article>
     	</main>
 		</div><!-- #primary -->
@@ -30,25 +32,25 @@ get_header();
         const urlParams = new URLSearchParams(window.location.search);
         const id = <?php echo get_the_ID() ?>;
         console.log({id});
-        let ret;
+        let projekt;
 
-         const url = `http://emsportfolio.dk/kea/09_cms/babushka/wp-json/wp/v2/ret/${id}`;
+         const url = `http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/projekt/${id}`;
 
               async function hentData() {
                   console.log("hentData");
             const respons = await fetch(url);
-            ret = await respons.json();
-            console.log({ret});
+            projekt = await respons.json();
+            console.log({projekt});
         vis();
         }
 
         function vis(){
             
-            document.querySelector(".navn").textContent = ret.titel;
-            document.querySelector(".langbeskrivelse").textContent = ret.beskrivelse;
-			document.querySelector(".pris").textContent = `${ret.pris} dkk`;
+            document.querySelector(".navn").textContent = projekt.navn;
+            document.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
+            document.querySelector(".beskrivelse").innerHTML = projekt.beskrivelse;
             document.querySelector(".img").src = ret.billede.guid;
-			document.querySelector(".img").alt = ret.titel;
+			      document.querySelector(".img").alt = projekt.slug;
         }
 hentData();
 
