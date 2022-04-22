@@ -18,8 +18,8 @@ get_header();
           <img src="" alt=""/>
           <p class="kortbeskrivelse"></p>
           <p class="beskrivelse"></p>
-          <!-- <a href="/filer/" download>  **** change it here, download filer knap --> 
           <p class="extra"></p>
+		  <a href="">
         </article>
       </template>
 
@@ -66,7 +66,7 @@ async function hentData() {
 
 function opretKnapper() {
 categories.forEach (cat => {
-document.querySelector("#filtrering").innerHTML += `<button class="filter" data-projekt="${cat.slug}">${cat.slug}</button>`
+document.querySelector("#filtrering").innerHTML += `<button class="filter" data-projekt="${cat.name}">${cat.name}</button>`
 })
 addEventListenersToButtons ();
 }
@@ -100,16 +100,16 @@ function visProjekter() {
 		if (filterProjekt == "alle" || projekt.categories.includes(filterProjekt)) {
 			let klon = temp.cloneNode(true).content;
 
-      klon.querySelector(".navn").textContent = projekt.titel;
-      klon.querySelector(".kortbeskrivelse").textContent = projekt.slug;
-      klon.querySelector("img").src = projekt.billede.guid;
-      klon.querySelector("img").alt = projekt.titel;
+			klon.querySelector(".navn").innerHTML = projekt.navn;
+			klon.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
+			klon.querySelector("img").src = projekt.billede;
+			klon.querySelector("img").alt = projekt.slug;
 
-      klon
-        .querySelector("article")
-        .addEventListener("click", () => location.href = projekt.link);
-	
-      container.appendChild(klon);
+			klon
+				.querySelector("article")
+				.addEventListener("click", () => location.href = projekt.link);
+			
+			container.appendChild(klon);
     	}
   	});
 }
