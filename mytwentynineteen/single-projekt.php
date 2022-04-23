@@ -49,7 +49,7 @@ get_header();
             document.querySelector(".navn").textContent = projekt.navn;
             document.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
             document.querySelector(".beskrivelse").innerHTML = projekt.beskrivelse;
-            document.querySelector(".img").src = ret.billede.guid;
+            document.querySelector(".img").src = projekt.billede.guid;
 			      document.querySelector(".img").alt = projekt.slug;
         }
 hentData();
