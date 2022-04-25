@@ -39,25 +39,26 @@ get_header();
         console.log({id});
         let projekt;
 
-         const url = `http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/projekt/${id}`;
+        const url = `http://emsportfolio.dk/kea/09_cms/unesco_asp/wp-json/wp/v2/projekt/${id}`;
 
-              async function hentData() {
-                  console.log("hentData");
-            const respons = await fetch(url);
-            projekt = await respons.json();
-            console.log({projekt});
+        async function hentData() {
+        console.log("hentData");
+        const respons = await fetch(url);
+        projekt = await respons.json();
+        console.log({projekt});
         vis();
         }
 
         function vis(){
             
-            document.querySelector(".navn").textContent = projekt.navn;
-            document.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
-            document.querySelector(".beskrivelse").innerHTML = projekt.beskrivelse;
-            document.querySelector(".img").src = projekt.billede.guid;
-			      document.querySelector(".img").alt = projekt.slug;
+          document.querySelector(".navn").textContent = projekt.navn;
+          document.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
+          document.querySelector(".beskrivelse").innerHTML = projekt.beskrivelse;
+          document.querySelector(".img").src = projekt.billede.guid;
+          document.querySelector(".img").alt = projekt.slug;
         }
-hentData();
+
+        hentData();
 
         document.querySelector(".tilbage").addEventListener("click", ()=>{ history.back()});
 

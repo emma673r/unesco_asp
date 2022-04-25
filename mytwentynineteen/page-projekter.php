@@ -14,10 +14,11 @@ get_header();
 
 <style>
 
-	img {
-		max-width:500px;
-		height:auto;
-	}
+img {
+	max-width:500px;
+	height:auto;
+}
+
 .dropdown {
   display: inline-block;
   position: relative;
@@ -151,15 +152,24 @@ function addEventListenersToButtons () {
 }
 
 function filtrering() {
-	filterProjekt = this.dataset.projekt;
+	console.log("filtrering");
 	console.log("this is this.dataset.projekt = " + this.dataset.projekt);
-	
+
+	if (this.dataset.projekt != "alle") {
+
+		filterProjekt = parseInt(this.dataset.projekt);
+		// console.log("this is this.dataset.projekt = " + this.dataset.projekt);
+	}
+	else {
+		filterProjekt = this.dataset.projekt;
+	}
+
 	visProjekter();
 }
 
 function visProjekter() {
 	// console.log("projekter", projekter);
-console.log(filterProjekt);
+	// console.log("filterProjekt i visProjekter" + filterProjekt);
 
 
 	let temp = document.querySelector("template");
@@ -169,12 +179,13 @@ console.log(filterProjekt);
 
 	projekter.forEach((projekt) => {
 		// console.log("projekt",projekt)
-		console.log("projekt.verdensmal",projekt.verdensmal)
-		console.log("projekt.uddanelsesniveau",projekt.uddanelsesniveau)
+		// console.log("projekt.verdensmal",projekt.verdensmal)
+		// console.log("projekt.uddanelsesniveau",projekt.uddanelsesniveau)
 
 		// console.log(projekt.verdensmal.includes(filterProjekt));
 		
 		if (filterProjekt == "alle" || projekt.verdensmal.includes(filterProjekt) || projekt.uddanelsesniveau.includes(filterProjekt)) {
+	
 			
 			let klon = temp.cloneNode(true).content;
 
@@ -191,7 +202,8 @@ console.log(filterProjekt);
     	}
 		
 		else {
-			console.log("Ingen projekter i denne kategori");
+			container.style.fontSize = "50px";
+			container.innerHTML = "Der findes ingen projekter i denne kategori";
 		}
   	});
 }
