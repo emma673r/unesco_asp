@@ -19,13 +19,13 @@ get_header();
 
       <article>
         <h3 class="navn"></h3>
-        <div class="grid1">
+        
         <img class="img" src="" alt="">
         <p><span class="kortbeskrivelse"></span></p>
         <p><span class="beskrivelse"></span></p>
         <a href=""></a>
         <p><span class="extra"></span></p>
-        </div>
+      
 
       </article>
     	</main>
