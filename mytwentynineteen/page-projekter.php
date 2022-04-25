@@ -201,10 +201,11 @@ function visProjekter() {
 			container.appendChild(klon);
     	}
 		
-		else {
-			container.style.fontSize = "50px";
-			container.innerHTML = "Der findes ingen projekter i denne kategori";
-		}
+		// else {
+		// 	container.style.fontSize = "50px";
+		// 	container.innerHTML = "Der findes ingen projekter i denne kategori";
+		// }
+		
   	});
 }
 
