@@ -22,10 +22,10 @@ get_header();
         <div class="grid1">
         <img class="img" src="" alt="">
         <p><span class="kortbeskrivelse"></span></p>
-        <p><span class="beskrivelse"></span></p>
-        <a href=""></a>
+         <p><span class="beskrivelse"></span></p>
+        <!-- <a href=""></a> -->
         <p><span class="extra"></span></p>
-        <div class="grid1"></div>
+         </div>
 
       
 
@@ -56,6 +56,7 @@ get_header();
           document.querySelector(".beskrivelse").innerHTML = projekt.content.rendered;
           document.querySelector(".img").src = projekt.billede.guid;
           document.querySelector(".img").alt = projekt.slug;
+          document.querySelector(".extra").innerHTML = projekt.extra;
         }
 
         hentData();
