@@ -160,6 +160,7 @@ function filtrering() {
 		filterProjekt = parseInt(this.dataset.projekt);
 		// console.log("this is this.dataset.projekt = " + this.dataset.projekt);
 	}
+
 	else {
 		filterProjekt = this.dataset.projekt;
 	}
@@ -186,7 +187,7 @@ function visProjekter() {
 		
 		if (filterProjekt == "alle" || projekt.verdensmal.includes(filterProjekt) || projekt.uddanelsesniveau.includes(filterProjekt)) {
 	
-			
+
 			let klon = temp.cloneNode(true).content;
 
 			klon.querySelector(".navn").innerHTML = projekt.navn;
