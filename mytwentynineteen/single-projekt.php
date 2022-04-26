@@ -52,10 +52,10 @@ get_header();
         function vis(){
             
           document.querySelector(".navn").textContent = projekt.navn;
-          document.querySelector(".kortbeskrivelse").innerHTML = projekt.content.rendered;
+          document.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
           document.querySelector(".beskrivelse").innerHTML = projekt.content.rendered;
-          document.querySelector(".img").src = projekt.content.rendered;
-          document.querySelector(".img").alt = projekt.content.rendered;
+          document.querySelector(".img").src = projekt.billede.guid;
+          document.querySelector(".img").alt = projekt.slug;
         }
 
         hentData();
