@@ -6,16 +6,6 @@ Description:  Twenty Nineteen Child Theme
 Author:      Emma Pasquer
 */
 
-/* @font-face {
-  font-family: ;
-  src: url();
-} */
-
 div {
   display: grid;
-}
-
-button {
-  background-color: green;
-  color: blue;
 }
