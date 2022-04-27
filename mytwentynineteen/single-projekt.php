@@ -13,6 +13,13 @@ get_header();
 ?>
 <style>
 
+.wp-block-columns {
+  display:block;
+}
+
+* {
+  
+}
 
 .grid1 {
   grid-row: 2;
@@ -31,15 +38,7 @@ get_header();
 
 .beskrivelse_div {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-}
-
-.kortbeskrivelse{
-grid-column: 2;
-}
-
-.beskrivelse {
-grid-column:1;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .extra {
