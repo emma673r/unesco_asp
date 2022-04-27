@@ -13,16 +13,7 @@
 
 ?>
 
-<style>
-	footer #colophon {
-  background-color: #ce6305;
-}
 
-h2 h3 h4 p {
-	color: #1D75B4;
-}
-
-</style>
 
 	</div><!-- #content -->
 
