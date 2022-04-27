@@ -12,8 +12,8 @@ Author:      Emma Pasquer
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url(fonts/montserrat-variablefont_wght-webfont.woff2);
+  font-family: "Roboto";
+  src: url(fonts/roboto-regular-webfont.woff2);
 }
 
 div {
