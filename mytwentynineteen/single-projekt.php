@@ -17,23 +17,20 @@ get_header();
   display:block;
 }
 
-* {
-  
+main {
+  padding: 100px;
 }
 
 .grid1 {
-  grid-row: 2;
+  grid-row: 4;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .img {
-  max-width: 400px;
-}
-
-.img {
-  grid-row:3;
+  max-width: 600px;
+  grid-row:1;
 }
 
 .beskrivelse_div {
