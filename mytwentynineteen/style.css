@@ -5,3 +5,12 @@ Version:      1.0.0
 Description:  Twenty Nineteen Child Theme
 Author:      Emma Pasquer
 */
+
+@font-face {
+    font-family: ;
+    src: url();
+}
+
+div {
+    display:grid;
+}
