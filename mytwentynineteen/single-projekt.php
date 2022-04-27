@@ -64,7 +64,7 @@ img {
 h3 {
   background-color: #CE6305;
   color:white;
-  border: none;
+  border:none;
 }
 
 

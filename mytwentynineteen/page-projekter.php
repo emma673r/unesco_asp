@@ -14,6 +14,11 @@ get_header();
 
 <style>
 
+main {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
 img {
 	max-width:500px;
 	height:auto;
@@ -28,8 +33,6 @@ img {
   display: none;
   position: absolute;
   width: 100%;
-  overflow: scroll;
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
 
@@ -59,6 +62,30 @@ width: 25ch;
 	width: 26ch;
 }
 
+#liste {
+	display: grid;
+	/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+	grid-template-columns: 1fr 1fr;
+
+}
+
+img {
+	max-width: 500px;
+}
+
+#projekter {
+	max-height: fit-content;
+	justify-self: center;
+	display: flex:
+	flex-direction: column;
+}
+
+h3 {
+  background-color: #CE6305;
+  color:white;
+  border:none;
+}
+
 </style>
 			
       <template>
@@ -68,7 +95,7 @@ width: 25ch;
           <p class="kortbeskrivelse"></p>
           <p class="beskrivelse"></p>
           <p class="extra"></p>
-		  <a href="">
+		  <!-- <a href=""> -->
         </article>
       </template>
 
@@ -194,6 +221,7 @@ function visProjekter() {
 			klon.querySelector(".kortbeskrivelse").innerHTML = projekt.kortbeskrivelse;
 			klon.querySelector("img").src = projekt.billede.guid;
 			klon.querySelector("img").alt = projekt.slug;
+			// klon.querySelector("a").href = projekt.filer.guid;
 
 			klon
 				.querySelector("article")
