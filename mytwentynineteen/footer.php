@@ -36,7 +36,7 @@ h2 h3 h4 p {
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
 				<?php
 				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
+				// printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
 				?>
 			</a>
 			<?php
