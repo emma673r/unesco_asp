@@ -18,7 +18,7 @@ get_header();
 }
 
 main {
-  padding: 100px;
+  padding: 50px;
 }
 
 .grid1 {
@@ -26,6 +26,11 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  padding-bottom: 100px;
+}
+
+img {
+  max-width: 400px;
 }
 
 .img {
@@ -35,11 +40,31 @@ main {
 
 .beskrivelse_div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-row: 2 ;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 80px;
+}
+
+.beskrivelse {
+  grid-column:1;
+
+
 }
 
 .extra {
-  grid-row: 5;
+  grid-column: 2;
+  color: dark-blue;
+  height: fit-content;
+  background-color: #4DB0D0;
+  padding: 15px;
+
+}
+
+h3 {
+  background-color: #CE6305;
+  color:white;
+  border: none;
 }
 
 
@@ -53,13 +78,15 @@ main {
         <h3 class="navn"></h3>
         <div class="grid1">
         <img class="img" src="" alt="">
-        <div class="beskrivelse_div">
         <span class="kortbeskrivelse"></span>
+        </div>
+        <div class="beskrivelse_div">
          <span class="beskrivelse"></span>
+         <span class="extra"></span>
         </div>
         <!-- <a href=""></a> -->
-        <span class="extra"></span>
-         </div>
+       
+         
 
       
 
