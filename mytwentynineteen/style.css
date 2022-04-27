@@ -6,6 +6,21 @@ Description:  Twenty Nineteen Child Theme
 Author:      Emma Pasquer
 */
 
+@font-face {
+  font-family: "Montserrat";
+  src: url(fonts/montserrat-variablefont_wght-webfont.woff2);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(fonts/montserrat-variablefont_wght-webfont.woff2);
+}
+
 div {
   display: grid;
+}
+
+/* footer */
+footer#colophon {
+  background-color: #ce6305;
 }
