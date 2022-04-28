@@ -36,10 +36,12 @@ h2 h3 h4 p {
 #masthead > div {
   display: grid;
   grid-template-columns: 20% 80%;
+  grid-template-rows: 1fr 1fr;
 }
 
 #masthead > div > div {
   grid-column: 2;
+  grid-row: 2;
   display: flex;
   justify-content: space-around;
 }
@@ -55,8 +57,15 @@ h2 h3 h4 p {
   width: 100px;
   height: auto;
   grid-column: 1;
+  grid-row: 2;
 }
 
+/* Her prøver jeg at fjerne noget af højden på header */
+@media only screen and (min-width: 768px) {
+  .site-header {
+    padding: 0;
+  }
+}
 /* footer */
 #colophon {
   background-color: #ce6305;
