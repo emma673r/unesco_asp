@@ -62,11 +62,11 @@ h2 h3 h4 p {
 }
 
 /* Her prøver jeg at fjerne noget af højden på header */
-@media only screen and (min-width: 768px) {
-  .site-header {
-    padding: unset;
-  }
+
+.site-header {
+  padding: unset;
 }
+
 /* footer */
 #colophon {
   background-color: #ce6305;
