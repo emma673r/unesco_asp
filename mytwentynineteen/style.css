@@ -38,11 +38,11 @@ div {
 }
 
 /* footer */
-footer #colophon {
+#colophon {
   background-color: #ce6305;
 }
 
-footer#text {
+#text {
   display: none;
 }
 
