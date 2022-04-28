@@ -76,7 +76,17 @@ h2 h3 h4 p {
   display: none;
 }
 
-button, .button {
+.widget-area {
+  padding: unset;
+  margin: unset;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* buttons */
+button,
+.button {
   background-color: #ce6305;
 }
 
