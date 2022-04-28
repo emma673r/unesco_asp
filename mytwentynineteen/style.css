@@ -30,7 +30,7 @@ h2 h3 h4 p {
 
 #masthead {
   background-color: #f2efeb;
-  height: 180px;
+  height: auto;
 }
 
 #masthead > div {
@@ -54,10 +54,11 @@ h2 h3 h4 p {
 } */
 
 .site-logo .custom-logo-link {
-  width: 100px;
+  width: 140px;
   height: auto;
   grid-column: 1;
   grid-row: 2;
+  border-radius: unset;
 }
 
 /* Her prøver jeg at fjerne noget af højden på header */
