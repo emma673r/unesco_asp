@@ -66,12 +66,16 @@ h3 {
   border-radius:25px;
 }
 
+button, .button {
+  background-color: #ce6305;
+}
+
 
 </style>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-        <button class="tilbage" >Tilbage</button>
+        <button class="tilbage button" >Tilbage</button>
 
       <article>
         <h3 class="navn"></h3>
