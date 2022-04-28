@@ -48,8 +48,6 @@ img {
 
 .beskrivelse {
   grid-column:1;
-
-
 }
 
 .extra {
@@ -62,9 +60,14 @@ img {
 }
 
 h3 {
-  background-color: #CE6305;
+  background-color: #1D75B4;
   color:white;
   border:none;
+  border-radius:25px;
+}
+
+button, .button {
+  background-color: #ce6305;
 }
 
 
@@ -72,7 +75,7 @@ h3 {
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-        <button class="tilbage" >Tilbage</button>
+        <button class="tilbage button" >Tilbage</button>
 
       <article>
         <h3 class="navn"></h3>

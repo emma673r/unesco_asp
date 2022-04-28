@@ -13,78 +13,224 @@ get_header();
 ?>
 
 <style>
-
 main {
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
-img {
-	max-width:500px;
-	height:auto;
+	h3 {
+	background-color: #1D75B4;
+	color:white;
+	border:none;
+	padding:5px;
+	border-radius:25px;
+	}
+
+	button, .button {
+  background-color: #ce6305;
+  color: white;
+  border-radius:25px;}
+
+
+  .button_drop, .filter {
+	  background-color: #ce6305;
+	  color:white;
+  }  
+
+  /* .button:hover, .filter:hover, .dropdown:hover, button:hover {
+	  color:white;
+	  background-color:#ce6305;
+  } */
+
+
+/* burger menu start */
+
+#burger_closed {
+  width: 50px;
+  height: 50px;
+  color:black;
+    position:absolute;
+  top:30px;
+
+
 }
 
-.dropdown {
-  display: inline-block;
-  position: relative;
-}
-
-#filt-verd, #filt-udd{
+#burger_opened {
+  width: 50px;
+  height: 50px;
   display: none;
+  color:black;
+    position:absolute;
+  top:30px;
+
+}
+
+#hamburger {
+  position: fixed;
+
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+.burger_menu {
   position: absolute;
-  width: 100%;
+overflow:scroll;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 15px;
+  left: 0;
+  right: 0;
+  bottom: auto;
   z-index: 1000;
+  background-color: #ce6305;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  line-height: 40px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
-#filt-verd button, #filt-udd button{
-width: 25ch;
+.button, .button_drop {
+  background-color: #ce6305;
 }
 
-.dropdown:hover #filt-verd, .dropdown:hover #filt-udd {
-  display: block;
-  width: auto;
-  height: auto;
+.showMenu {
+  transform: translateY(0%);
 }
 
-#filt-verd button, #filt-udd button {
-  display: block;
-  color: #000000;
-  padding: 5px;
-  text-decoration: none;
+/* burger menu end */
+
+
+
+@media only screen
+  and (min-device-width: 600px) {
+
+	main {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	img {
+		max-width:500px;
+		height:auto;
+	}
+
+	.dropdown {
+		display: inline-block;
+		position: relative;
+
+		background-color: ;
+	}
+
+	#filt-verd, #filt-udd{
+		display: none;
+		position: absolute;
+
+		width: 100%;
+		z-index: 1000;
+	}
+
+	#filt-verd button, #filt-udd button{
+		width: 25ch;
+	}
+
+	.dropdown:hover #filt-verd, .dropdown:hover #filt-udd {
+		display: block;
+		width: auto;
+		height: auto;
+	}
+
+	#filt-verd button, #filt-udd button {
+		display: block;
+		color: black;
+		padding: 5px;
+		text-decoration: none;
+	}
+
+	#filt-verd button:hover, #filt-udd button:hover {
+		color: #ce6305;
+		background-color: #f2efeb;
+	}
+
+	.filter button {
+		width: 26ch;
+	}
+	  .button_drop, .filter {
+	  background-color: #f2efeb;
+	  color: black ;
+	  border-radius:none;
+  }  
+
+	#liste {
+		display: grid;
+		/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+		grid-template-columns: 1fr 1fr;
+	margin-bottom: 20px;
+	}
+
+	img {
+		max-width: 500px;
+	}
+	
+	button:hover, .dropdown:hover {
+		background-color:#f2efeb;
+		color:black;
 }
 
-#filt-verd button:hover, #filt-udd button:hover {
-  color: #ffffff;
-  background-color: #00a4bd;
-}
+	#projekter {
+		height: 750px;
+		width:500px;
+		justify-self: center;
+		/* display: flex: */
+		flex-direction: column;
+		background-color: #f2efeb;
+		padding:10px;
+		font-size: 14pt;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-overflow: ellipsis;
+		border-radius: 25px;
+		border-style: solid;
+		border-width:5px;
+		border-color: #1D75B4;
+	}
 
-.filter button {
-	width: 26ch;
-}
+	#projekter img {
+		max-height: 300px;
+		max-width: 450px;
+	}
 
-#liste {
-	display: grid;
-	/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-	grid-template-columns: 1fr 1fr;
+	#hamburger {
+    display: none;
+  }
 
-}
+  .burger_menu {
+    /* display: flex; */
+    flex-direction: column;
+    transform: translateY(0);
+    transition: transform 0.2s;
+    position: relative;
+	overflow: scroll;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0%;
+    background: none;
+    gap: 3%;
+    font-size: 1.5rem;
+  }
 
-img {
-	max-width: 500px;
-}
+.button, .button_drop{
+    line-height: normal;
+    gap: 30px;
+  }
 
-#projekter {
-	max-height: fit-content;
-	justify-self: center;
-	display: flex:
-	flex-direction: column;
-}
+  }
 
-h3 {
-  background-color: #CE6305;
-  color:white;
-  border:none;
-}
+
 
 </style>
 			
@@ -103,12 +249,19 @@ h3 {
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<nav id="filtrering">
-				<button data-projekt="alle">Alle</button>
-				<div class="dropdown">FN verdensmål
-					<div id="filt-verd"></div>
+				<div class="burger_menu">
+					<button class="button dropdown" data-projekt="alle">Alle</button>
+					<div class="dropdown button">FN verdensmål
+						<div id="filt-verd" class="button_drop"></div>
+					</div>
+					<div class="dropdown button">Uddannelsesniveau
+						<div id="filt-udd" class="button_drop"></div>
+					</div>
 				</div>
-				<div class="dropdown">Uddanelsesniveau
-				<div id="filt-udd"></div></div>
+				<div id="hamburger">
+					<div id="burger_closed">☰</div>
+					<div id="burger_opened">✕</div>
+       			 </div>
 			</nav>
       <section id="liste"></section>
 
@@ -237,6 +390,36 @@ function visProjekter() {
 		
   	});
 }
+// burger menu script
+
+const menu = document.querySelector(".burger_menu");
+const menuItems = document.querySelectorAll(".button .button_drop");
+const menuSubItems = document.querySelectorAll(".button_drop");
+const hamburger = document.querySelector("#hamburger");
+const closeIcon = document.querySelector("#burger_opened");
+const menuIcon = document.querySelector("#burger_closed");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
+menuItems.forEach(function (item) {
+  item.addEventListener("click", toggleMenu);
+});
+
+menuSubItems.forEach(function (item) {
+  item.addEventListener("click", toggleMenu);
+});
 
 
 	  </script>
