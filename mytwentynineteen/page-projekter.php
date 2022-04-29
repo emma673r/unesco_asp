@@ -221,6 +221,7 @@ overflow:scroll;
     background: none;
     gap: 3%;
     font-size: 1.5rem;
+	overflow: visible;
   }
 
 .button, .button_drop{
