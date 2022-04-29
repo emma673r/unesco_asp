@@ -224,9 +224,9 @@ overflow:scroll;
 	overflow: visible;
   }
 
-.button, .button_drop{
-    line-height: normal;
-    gap: 30px;
+	.button, .button_drop{
+    	line-height: normal;
+    	gap: 30px;
   }
 
   }

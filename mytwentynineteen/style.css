@@ -18,33 +18,86 @@ Author:      Emma Pasquer
   src: url(fonts/roboto-regular-webfont.woff2);
 }
 
-h1 {
-  color: #1d75b4;
+* {
+  font-family: "roboto";
+  color: #09273d;
 }
 
-h2 h3 h4 p {
-  color: #09273d;
+h1 {
+  color: #1d75b4;
+  font-family: "Roboto";
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #1d75b4;
+  font-family: "Roboto";
+}
+
+#logo_div {
+  width: 250px;
+  height: 150px;
+  background-image: url(pics/unesco-logo.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.site-logo {
+  display: none;
+}
+
+.header_div {
+  display: flex;
+  gap: 10px;
+}
+
+.site-branding {
+  padding: 0;
+  margin: 0;
+}
+
+#site-navigation {
+  width: auto;
+}
+
+@media only screen and (min-device-width: 600px) {
+
+  #site-navigation {
+    width: 600px;
+  }
+
+  .site-title {
+    font-size: 36pt;
+  }
+
+
 }
 
 /* header */
 
 #masthead {
+  padding-top: 30px;
   background-color: #f2efeb;
   height: auto;
+  padding-left: 60px;
 }
 
-#masthead > div {
+/* #masthead > div {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: 1fr 1fr;
-}
+} */
 
-#masthead > div > div {
+/* #masthead > div > div {
   grid-column: 2;
   grid-row: 2;
   display: flex;
   justify-content: space-around;
-}
+} */
 
 /* div .site-branding {
   display: grid;
@@ -53,18 +106,26 @@ h2 h3 h4 p {
   justify-content: space-around;
 } */
 
-.site-logo .custom-logo-link {
-  width: 140px;
+/* .site-logo, .custom-logo-link {
+  width: 800px;
   height: auto;
   grid-column: 1;
   grid-row: 2;
   border-radius: unset;
 }
 
+.custom-logo-link {
+  width: 300px;
+  height: auto;
+} */
+
 /* Her prøver jeg at fjerne noget af højden på header */
 
 .site-header {
-  padding: unset;
+  padding-top: 0;
+  padding-bottom: 200px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* footer */
@@ -93,3 +154,17 @@ button,
 /* div {
   display: grid;
 } */
+
+/* front page start */
+
+.entry-title,
+.overskrift_forside {
+  display: none;
+}
+
+.wp-block-cover__inner-container p {
+  color: #1d75b4;
+  font-weight: bolder;
+}
+
+/* front page end */
